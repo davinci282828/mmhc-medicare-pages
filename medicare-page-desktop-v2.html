@@ -1701,6 +1701,20 @@ button:focus-visible {
   outline: 3px solid #1E4129;
   outline-offset: 2px;
 }
+
+/* Form input focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #1E4129 !important;
+  box-shadow: 0 0 0 3px rgba(30,65,41,0.1) !important;
+  outline: none;
+}
+
+/* Hover styles for submit button */
+button[type="submit"]:hover {
+  background: #2F5A3D !important;
+}
 </style>
 </head>
 <body>
@@ -2294,6 +2308,26 @@ button:focus-visible {
 </section>
 
 <!-- ================================================================
+     FINAL CTA (MOVED UP)
+     ================================================================ -->
+<section class="final-cta" id="final-cta" aria-label="Contact us for therapy">
+  <div class="container final-cta__inner">
+    <div class="eyebrow">Ready to Start Therapy?</div>
+    <h2>📅 Book Your First Session Now</h2>
+    <p class="final-cta__subtitle">
+      Free benefits verification. Know your exact copay in 10 minutes.
+      No obligation, no surprises – just clarity.
+    </p>
+    <div class="final-cta__actions">
+      <a href="#contact-form" class="btn btn--white">Start Therapy Now →</a>
+    </div>
+    <p class="final-cta__micro">
+      Mon–Fri 8am–8pm · Same-day verification · Se habla español
+    </p>
+  </div>
+</section>
+
+<!-- ================================================================
      SOCIAL PROOF — Testimonials
      ================================================================ -->
 <section class="section section--cream" id="testimonials" aria-label="Patient testimonials">
@@ -2529,7 +2563,7 @@ button:focus-visible {
 </section>
 
 <!-- ================================================================
-     CLOSING PARAGRAPH + FINAL CTA
+     CLOSING PARAGRAPH
      ================================================================ -->
 <section class="section section--cream" style="padding: 48px 0;">
   <div class="container">
@@ -2541,25 +2575,180 @@ button:focus-visible {
   </div>
 </section>
 
-<section class="final-cta" id="final-cta" aria-label="Contact us for free benefits verification">
-  <div class="container final-cta__inner">
-    <div class="eyebrow">Ready to Start Therapy?</div>
-    <h2>📅 Book Your First Session Now</h2>
-    <p class="final-cta__subtitle">
-      Free benefits verification. Know your exact copay in 10 minutes.
-      No obligation, no surprises – just clarity.
-    </p>
-    <div class="final-cta__actions">
-      <a href="tel:2129608626" class="final-cta__phone">📞 212-960-8626</a>
-      <div class="final-cta__divider"></div>
-      <a href="#" class="btn btn--white">📅 Book Your First Session Now</a>
+<!-- ================================================================
+     CONTACT FORM SECTION
+     ================================================================ -->
+<section class="section section--cream" id="contact-form" aria-label="Get started with therapy">
+  <div class="container">
+    <div style="display: flex; gap: 64px; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Left Column - Contact Info (40%) -->
+      <div style="flex: 2; max-width: 480px;">
+        <div class="eyebrow">READY TO BEGIN?</div>
+        <h2 style="margin-bottom: 20px; font-size: 48px;">Get Started Today</h2>
+        <p style="font-size: 18px; line-height: 1.7; color: #3D3D3D; margin-bottom: 40px;">
+          We'd love to hear from you! After you submit the form, you'll receive an email with a link to book a screening call at your convenience. We're excited to help you on your journey!
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; background: #1E4129; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 20px;">📞</div>
+            <div>
+              <div style="font-weight: 600; color: #1A1A1A;">Phone</div>
+              <a href="tel:2129608626" style="color: #2F5A3D; font-size: 18px; font-weight: 600;">212-960-8626</a>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="width: 48px; height: 48px; background: #1E4129; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 20px; flex-shrink: 0;">📍</div>
+            <div>
+              <div style="font-weight: 600; color: #1A1A1A;">Address</div>
+              <div style="color: #3D3D3D; line-height: 1.5;">303 Fifth Avenue Suite 1108<br>New York, NY 10016</div>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; background: #1E4129; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 20px;">🕒</div>
+            <div>
+              <div style="font-weight: 600; color: #1A1A1A;">Hours</div>
+              <div style="color: #3D3D3D;">Mon–Fri 8am–8pm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column - Form Card (60%) -->
+      <div style="flex: 3;">
+        <div style="background: #FFFFFF; padding: 40px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+          <form>
+            <!-- Name and Email Row -->
+            <div style="display: flex; gap: 16px; margin-bottom: 20px;">
+              <div style="flex: 1;">
+                <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Name*</label>
+                <input type="text" required style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px;">
+              </div>
+              <div style="flex: 1;">
+                <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Email*</label>
+                <input type="email" required style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px;">
+              </div>
+            </div>
+            
+            <!-- Phone -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Phone*</label>
+              <input type="tel" required style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px;">
+            </div>
+            
+            <!-- Insurance Question -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Are you hoping to use insurance?</label>
+              <div style="display: flex; gap: 24px; margin-top: 8px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 16px; cursor: pointer;">
+                  <input type="radio" name="insurance" value="yes" style="margin: 0;">
+                  <span>Yes</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 16px; cursor: pointer;">
+                  <input type="radio" name="insurance" value="no" style="margin: 0;">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            
+            <!-- Insurance Provider -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">If yes, what is your insurance?</label>
+              <input type="text" style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px;">
+            </div>
+            
+            <!-- What can we help with -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">What can we help with?</label>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="anxiety" style="margin: 0;">
+                  <span>Anxiety</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="depression" style="margin: 0;">
+                  <span>Depression</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="grief" style="margin: 0;">
+                  <span>Grief</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="adhd" style="margin: 0;">
+                  <span>ADHD</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="trauma" style="margin: 0;">
+                  <span>Trauma/PTSD</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="transitions" style="margin: 0;">
+                  <span>Life Transitions</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="relationships" style="margin: 0;">
+                  <span>Relationship Issues</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="work-stress" style="margin: 0;">
+                  <span>Work Stress/Burnout</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="self-esteem" style="margin: 0;">
+                  <span>Self Esteem</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="sleep" style="margin: 0;">
+                  <span>Sleep Issues</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="substance" style="margin: 0;">
+                  <span>Substance Use</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                  <input type="checkbox" value="other" style="margin: 0;">
+                  <span>Other</span>
+                </label>
+              </div>
+            </div>
+            
+            <!-- Message -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Message</label>
+              <textarea style="width: 100%; height: 80px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; resize: vertical; font-family: inherit;" rows="3"></textarea>
+            </div>
+            
+            <!-- How did you hear about us -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">How did you hear about us?</label>
+              <select style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; background: #FFFFFF;">
+                <option value="">Select an option</option>
+                <option value="google">Google Search</option>
+                <option value="insurance">Insurance Provider</option>
+                <option value="friend">Friend/Family</option>
+                <option value="social">Social Media</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <!-- Disclaimer -->
+            <div style="margin-bottom: 24px;">
+              <p style="font-size: 12px; color: #6B6B6B; line-height: 1.4;">
+                By completing this form you agree to receive email and SMS communications from us.
+              </p>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" style="width: 100%; height: 52px; background: #1E4129; color: #FFFFFF; border: none; border-radius: 12px; font-size: 18px; font-weight: 600; cursor: pointer; transition: background 0.25s ease;">
+              Get Started
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div style="margin-top: 16px;">
-      <a href="#" class="btn btn--outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; padding: 14px 32px;">🔍 Free Medicare Benefits Verification – Know Your Exact Copay in 10 Minutes</a>
-    </div>
-    <p class="final-cta__micro">
-      Available Monday–Friday 8am–8pm · Same-day verification · Se habla español
-    </p>
   </div>
 </section>
 

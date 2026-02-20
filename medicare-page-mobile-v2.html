@@ -90,13 +90,12 @@ html {
 
 body {
   font-family: 'Aptos', 'Calibri', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   color: #3D3D3D;
   background: #FFFFFF;
   max-width: 428px;
   margin: 0 auto;
-  padding-bottom: 80px;
   overflow-x: hidden;
 }
 
@@ -112,10 +111,10 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
-h1 { font-size: 32px; font-weight: 700; }
-h2 { font-size: 30px; font-weight: 700; margin-bottom: 16px; }
-h3 { font-size: 22px; font-weight: 600; }
-h4 { font-size: 20px; font-weight: 600; }
+h1 { font-size: 28px; font-weight: 700; }
+h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+h3 { font-size: 20px; font-weight: 600; }
+h4 { font-size: 18px; font-weight: 600; }
 
 p { margin-bottom: 14px; }
 p:last-child { margin-bottom: 0; }
@@ -143,6 +142,12 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 .section {
   padding: 56px 24px;
+  scroll-margin-top: 56px;
+}
+
+/* Fix for sticky nav overlapping content */
+h2, h3, .section-header {
+  scroll-margin-top: 56px;
 }
 
 .section--cream { background: #FAF7F2; }
@@ -211,22 +216,7 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
 }
 
-.btn--phone-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 16px;
-  background: transparent;
-  border: 2px solid #2F5A3D;
-  border-radius: 10px;
-  color: #2F5A3D;
-  font-family: 'Aptos', 'Calibri', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  min-height: 48px;
-}
+/* btn--phone-block removed - replaced with inline "Start Therapy Now" buttons */
 
 /* ==========================================================================
    SKIP LINK
@@ -280,7 +270,8 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 .hero {
   background: #FAF7F2;
-  padding: 32px 24px 40px;
+  padding: 88px 24px 40px;
+  scroll-margin-top: 56px;
 }
 
 .hero__medicare-badge {
@@ -948,6 +939,7 @@ p:last-child { margin-bottom: 0; }
   -webkit-overflow-scrolling: touch;
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  scroll-margin-top: 56px;
 }
 
 .copay-details-mobile table {
@@ -1108,55 +1100,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 12px;
 }
 
-/* ==========================================================================
-   STICKY BOTTOM BAR
-   ========================================================================== */
-.sticky-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 428px;
-  margin: 0 auto;
-  background: #FFFFFF;
-  border-top: 1px solid #E8E8E8;
-  padding: 10px 16px;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-  padding-bottom: max(10px, env(safe-area-inset-bottom));
-}
-
-.sticky-bar__phone {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 48px;
-  background: #FFFFFF;
-  border: 2px solid #2F5A3D;
-  border-radius: 10px;
-  font-size: 22px;
-  flex-shrink: 0;
-  min-height: 48px;
-}
-
-.sticky-bar__cta {
-  flex: 1;
-  background: #1E4129;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 10px;
-  font-family: 'Aptos', 'Calibri', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  min-height: 48px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* Sticky bottom bar removed - inline CTAs are sufficient */
 
 /* ==========================================================================
    REDUCED MOTION
@@ -1193,7 +1137,7 @@ p:last-child { margin-bottom: 0; }
 <main id="main-content">
 <section class="hero" aria-label="Medicare Advantage therapy introduction">
 
-  <!-- Medicare Badge removed per Steven's feedback -->
+  <!-- Medicare Badge removed per mobile optimization -->
 
   <div class="hero__stats">
     <div class="stat-card">
@@ -1450,8 +1394,7 @@ p:last-child { margin-bottom: 0; }
   <div style="margin-top: 28px; padding: 24px; background: #E8F0E8; border-radius: 14px; text-align: center;">
     <p style="font-size: 17px; font-weight: 600; color: #1A1A1A; margin-bottom: 6px;">Not Sure Which Plan You Have?</p>
     <p style="font-size: 15px; color: #3D3D3D; margin-bottom: 16px;">We verify everything for you and explain your exact cost clearly.</p>
-    <a href="#final-cta" class="btn btn--primary" style="margin-bottom: 10px;">📅 Book Your First Session →</a>
-    <a href="tel:2129608626" class="btn--phone-block">📞 212-960-8626</a>
+    <a href="#final-cta" class="btn btn--primary">Start Therapy Now →</a>
   </div>
 </section>
 
@@ -1545,7 +1488,7 @@ p:last-child { margin-bottom: 0; }
     MMHC handles all billing directly with your carrier – no claim filing on your end.
   </p>
   <div style="margin-top: 24px;">
-    <a href="#final-cta" class="btn btn--primary">📅 Book Your First Session →</a>
+    <a href="#final-cta" class="btn btn--primary">Start Therapy Now →</a>
   </div>
 </section>
 
@@ -1701,9 +1644,9 @@ p:last-child { margin-bottom: 0; }
       </table>
     </div>
     <p class="medigap__footnote">* Plans C &amp; F: Medicare-eligible before Jan 1, 2020 only.</p>
-    <p style="font-size: 15px; margin-top: 16px;">Not sure which Medigap letter you carry? Call <a href="tel:2129608626" style="color: #2E7D32; font-weight: 600;">212-960-8626</a>.</p>
+    <p style="font-size: 15px; margin-top: 16px;">Not sure which Medigap letter you carry? We'll help you figure it out during your free benefits verification.</p>
     <div style="margin-top: 20px;">
-      <a href="tel:2129608626" class="btn btn--gold">Not Sure Which Plan? Call Us →</a>
+      <a href="#final-cta" class="btn btn--gold">Start Therapy Now →</a>
     </div>
   </div>
 </section>
@@ -1806,7 +1749,7 @@ p:last-child { margin-bottom: 0; }
       </button>
       <div class="faq-body">
         <div class="faq-answer">
-          MA offers fixed copays ($0–$40) vs. Original Medicare's 20% coinsurance. With Medigap: Plans B, C, F = $0. Call <a href="tel:2129608626">212-960-8626</a> for help.
+          MA offers fixed copays ($0–$40) vs. Original Medicare's 20% coinsurance. With Medigap: Plans B, C, F = $0. Contact us for personalized help with your specific plan.
         </div>
       </div>
     </div>
@@ -1818,7 +1761,7 @@ p:last-child { margin-bottom: 0; }
       </button>
       <div class="faq-body">
         <div class="faq-answer">
-          Free benefits verification. Call <a href="tel:2129608626">212-960-8626</a> or submit our online form. We check coverage, confirm copay, verify referral needs, and schedule your first session.
+          Free benefits verification. Contact us or submit our online form. We check coverage, confirm copay, verify referral needs, and schedule your first session.
         </div>
       </div>
     </div>
@@ -1861,13 +1804,13 @@ p:last-child { margin-bottom: 0; }
 
 <section class="final-cta" id="final-cta" aria-label="Contact us">
   <div class="eyebrow" style="color: #D4A574;">Ready to Start Therapy?</div>
-  <h2>📅 Book Your First Session Now</h2>
+  <h2>📅 Start Therapy Now</h2>
   <p class="final-cta__subtitle">
     Free verification. Know your exact copay in 10 minutes. No obligation.
   </p>
   <div class="final-cta__actions">
     <a href="tel:2129608626" class="final-cta__phone">📞 212-960-8626</a>
-    <a href="#" class="btn btn--white">📅 Book Your First Session Now</a>
+    <a href="#" class="btn btn--white">📅 Start Therapy Now</a>
     <a href="#" style="display: block; color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 600; padding: 10px; border: 1px solid rgba(255,255,255,0.3); border-radius: 8px;">🔍 Free Medicare Benefits Verification</a>
   </div>
   <p class="final-cta__micro">Mon–Fri 8am–8pm · Same-day verification · Se habla español</p>
@@ -1886,13 +1829,7 @@ p:last-child { margin-bottom: 0; }
   <p>© 2026 Manhattan Mental Health Counseling · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
 </footer>
 
-<!-- ================================================================
-     STICKY BOTTOM BAR
-     ================================================================ -->
-<div class="sticky-bar" role="complementary" aria-label="Quick actions">
-  <a href="tel:2129608626" class="sticky-bar__phone" aria-label="Call 212-960-8626">📞</a>
-  <a href="#final-cta" class="sticky-bar__cta">Check My Benefits — Free</a>
-</div>
+<!-- Sticky bottom bar removed - inline CTAs are sufficient -->
 
 <!-- ================================================================
      JAVASCRIPT

@@ -96,7 +96,6 @@ body {
   background: #FFFFFF;
   max-width: 428px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 img { max-width: 100%; display: block; }
@@ -934,46 +933,59 @@ h2, h3, .section-header {
 /* ==========================================================================
    COPAY DETAILS TABLE (mobile)
    ========================================================================== */
-.copay-details-mobile {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  scroll-margin-top: 56px;
+/* Copay Cards (mobile-optimized, replaces table) */
+.copay-cards-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.copay-details-mobile table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
+.copay-card {
   background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
 }
 
-.copay-details-mobile th {
-  background: #2F5A3D;
+.copay-card--highlight {
+  border: 2px solid #2F5A3D;
+}
+
+.copay-card__header {
+  background: #1E4129;
   color: #FFFFFF;
-  padding: 12px 12px;
-  text-align: left;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.copay-details-mobile td {
-  padding: 10px 12px;
-  font-size: 13px;
+.copay-card--highlight .copay-card__header {
+  background: #2F5A3D;
+}
+
+.copay-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
   border-bottom: 1px solid #F0F0F0;
+  font-size: 15px;
 }
 
-.copay-details-mobile tr:last-child td { border-bottom: none; }
+.copay-card__row span {
+  color: #6B6B6B;
+}
 
-.copay-details-mobile .highlight-row { background: #F0F9F0; }
+.copay-card__row strong {
+  color: #1E4129;
+  font-size: 16px;
+}
 
-.copay-details-mobile .highlight-row td {
-  color: #2F5A3D;
-  font-weight: 600;
+.copay-card__detail {
+  padding: 10px 20px 14px;
+  font-size: 13px;
+  color: #6B6B6B;
+  background: #FAFAFA;
 }
 
 /* ==========================================================================
@@ -1406,83 +1418,36 @@ h2, h3, .section-header {
     <div class="eyebrow">Detailed Costs</div>
     <h2>2026 Copay Details</h2>
   </div>
-  <div class="copay-details-mobile">
-    <table>
-      <thead>
-        <tr>
-          <th>Carrier</th>
-          <th>Plan Type</th>
-          <th>Copay</th>
-          <th>Dual Eligible</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Healthfirst</strong></td>
-          <td>HMO</td>
-          <td>$0–$40</td>
-          <td>$0 D-SNP</td>
-          <td>No coinsurance; no referral</td>
-        </tr>
-        <tr>
-          <td><strong>Healthfirst</strong></td>
-          <td>PPO</td>
-          <td>$0–$40</td>
-          <td>–</td>
-          <td>$0–$500 med deductible</td>
-        </tr>
-        <tr>
-          <td><strong>Healthfirst</strong></td>
-          <td>Retiree</td>
-          <td>$15–$20</td>
-          <td>–</td>
-          <td>Varies by employer</td>
-        </tr>
-        <tr class="highlight-row">
-          <td><strong>Molina</strong></td>
-          <td>HMO</td>
-          <td>$0–$45</td>
-          <td>$0 D-SNP</td>
-          <td>No coinsurance in-network</td>
-        </tr>
-        <tr class="highlight-row">
-          <td><strong>Molina</strong></td>
-          <td>D-SNP/Full</td>
-          <td>$0</td>
-          <td>Always $0</td>
-          <td>No coinsurance or deductible</td>
-        </tr>
-        <tr>
-          <td><strong>UHC</strong></td>
-          <td>HMO/PPO</td>
-          <td>$10–$25</td>
-          <td>$0–$5 Dual</td>
-          <td>OptumCare coordination</td>
-        </tr>
-        <tr>
-          <td><strong>EmblemHealth</strong></td>
-          <td>VIP</td>
-          <td>$15–$30</td>
-          <td>$0–$15 Dual</td>
-          <td>Cultural programs</td>
-        </tr>
-        <tr>
-          <td><strong>Fidelis</strong></td>
-          <td>HMO</td>
-          <td>$0–$30</td>
-          <td>$0 Dual Adv</td>
-          <td>No coinsurance in-network</td>
-        </tr>
-        <tr>
-          <td><strong>Fidelis</strong></td>
-          <td>PPO</td>
-          <td>$0–$25</td>
-          <td>$0 Dual Adv</td>
-          <td>Community services</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="copay-cards-mobile">
+    <div class="copay-card">
+      <div class="copay-card__header">Healthfirst</div>
+      <div class="copay-card__row"><span>HMO</span><strong>$0–$40</strong></div>
+      <div class="copay-card__row"><span>PPO</span><strong>$0–$40</strong></div>
+      <div class="copay-card__row"><span>Retiree</span><strong>$15–$20</strong></div>
+      <div class="copay-card__detail">D-SNP: $0 · No coinsurance · No referral required</div>
+    </div>
+    <div class="copay-card copay-card--highlight">
+      <div class="copay-card__header">Molina Healthcare</div>
+      <div class="copay-card__row"><span>HMO</span><strong>$0–$45</strong></div>
+      <div class="copay-card__row"><span>D-SNP/Full Dual</span><strong>$0</strong></div>
+      <div class="copay-card__detail">D-SNP always $0 · No coinsurance or deductible</div>
+    </div>
+    <div class="copay-card">
+      <div class="copay-card__header">United Healthcare</div>
+      <div class="copay-card__row"><span>HMO/PPO</span><strong>$10–$25</strong></div>
+      <div class="copay-card__detail">Dual: $0–$5 · OptumCare coordination available</div>
+    </div>
+    <div class="copay-card">
+      <div class="copay-card__header">EmblemHealth</div>
+      <div class="copay-card__row"><span>VIP</span><strong>$15–$30</strong></div>
+      <div class="copay-card__detail">Dual: $0–$15 · Cultural programs available</div>
+    </div>
+    <div class="copay-card">
+      <div class="copay-card__header">Fidelis Care</div>
+      <div class="copay-card__row"><span>HMO</span><strong>$0–$30</strong></div>
+      <div class="copay-card__row"><span>PPO</span><strong>$0–$25</strong></div>
+      <div class="copay-card__detail">Dual Advantage: $0 · No coinsurance in-network</div>
+    </div>
   </div>
   <p style="font-size: 14px; color: #6B6B6B; margin-top: 16px; text-align: center;">
     MMHC handles all billing directly with your carrier – no claim filing on your end.
@@ -1585,18 +1550,15 @@ h2, h3, .section-header {
 <!-- ================================================================
      TESTIMONIALS
      ================================================================ -->
+<!-- Testimonials section hidden until real content is available -->
+<!--
 <section class="section section--cream" id="testimonials" aria-label="Patient testimonials">
   <div class="section-header">
     <div class="eyebrow">Patient Stories</div>
     <h2>What Medicare Patients Say About MMHC</h2>
   </div>
-  <div class="testimonials-mobile">
-    <div class="testimonial-card" style="text-align: center; padding: 40px 24px;">
-      <p style="font-size: 16px; color: #6B6B6B; font-style: italic;">[testimonials]</p>
-      <span class="placeholder-label">[Testimonials will be placed here]</span>
-    </div>
-  </div>
 </section>
+-->
 
 <!-- ================================================================
      MEDIGAP

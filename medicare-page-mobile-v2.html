@@ -1127,6 +1127,26 @@ h2, h3, .section-header {
   outline: 3px solid #1E4129;
   outline-offset: 2px;
 }
+
+/* ==========================================================================
+   CONTACT FORM STYLES
+   ========================================================================== */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #1E4129 !important;
+  outline: none;
+}
+
+.contact-form button:hover {
+  background: #2F5A3D;
+}
 </style>
 </head>
 <body>
@@ -1546,6 +1566,21 @@ h2, h3, .section-header {
 </section>
 
 <!-- ================================================================
+     FINAL CTA (moved here from bottom, simplified)
+     ================================================================ -->
+<section class="final-cta" id="final-cta" aria-label="Contact us" style="padding: 48px 24px;">
+  <div class="eyebrow" style="color: #D4A574;">Ready to Start Therapy?</div>
+  <h2>Start Therapy Now</h2>
+  <p class="final-cta__subtitle">
+    Free verification. Know your exact copay in 10 minutes. No obligation.
+  </p>
+  <div class="final-cta__actions">
+    <a href="#" class="btn btn--white">Start Therapy Now</a>
+  </div>
+  <p class="final-cta__micro">Mon–Fri 8am–8pm · Same-day verification · Se habla español</p>
+</section>
+
+<!-- ================================================================
      TESTIMONIALS
      ================================================================ -->
 <!-- Testimonials section hidden until real content is available -->
@@ -1754,7 +1789,7 @@ h2, h3, .section-header {
 </section>
 
 <!-- ================================================================
-     CLOSING + FINAL CTA
+     CLOSING + CONTACT FORM
      ================================================================ -->
 <section class="section section--cream" style="padding: 36px 24px;">
   <p style="font-size: 17px; line-height: 1.65; color: #3D3D3D; font-style: italic; text-align: center;">
@@ -1762,18 +1797,132 @@ h2, h3, .section-header {
   </p>
 </section>
 
-<section class="final-cta" id="final-cta" aria-label="Contact us">
-  <div class="eyebrow" style="color: #D4A574;">Ready to Start Therapy?</div>
-  <h2>📅 Start Therapy Now</h2>
-  <p class="final-cta__subtitle">
-    Free verification. Know your exact copay in 10 minutes. No obligation.
-  </p>
-  <div class="final-cta__actions">
-    <a href="tel:2129608626" class="final-cta__phone">📞 212-960-8626</a>
-    <a href="#" class="btn btn--white">📅 Start Therapy Now</a>
-    <a href="#" style="display: block; color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 600; padding: 10px; border: 1px solid rgba(255,255,255,0.3); border-radius: 8px;">🔍 Free Medicare Benefits Verification</a>
+<section class="section section--cream" aria-label="Contact form">
+  <div class="section-header">
+    <div class="eyebrow">Ready to Begin?</div>
+    <h2>Get Started Today</h2>
+    <p class="section-subtitle">We'd love to hear from you! After you submit the form, you'll receive an email with a link to book a screening call at your convenience.</p>
   </div>
-  <p class="final-cta__micro">Mon–Fri 8am–8pm · Same-day verification · Se habla español</p>
+
+  <div style="background: #FFFFFF; border-radius: 16px; padding: 28px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 28px;">
+    <form class="contact-form">
+      <div style="margin-bottom: 20px;">
+        <label for="name" style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Name*</label>
+        <input type="text" id="name" name="name" required style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; box-sizing: border-box;">
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="email" style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Email*</label>
+        <input type="email" id="email" name="email" required style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; box-sizing: border-box;">
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="phone" style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Phone*</label>
+        <input type="tel" id="phone" name="phone" required style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; box-sizing: border-box;">
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Are you hoping to use insurance?</label>
+        <div style="display: flex; gap: 20px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 16px; min-height: 44px; cursor: pointer;">
+            <input type="radio" name="insurance" value="yes" style="margin: 0;">
+            <span>Yes</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 16px; min-height: 44px; cursor: pointer;">
+            <input type="radio" name="insurance" value="no" style="margin: 0;">
+            <span>No</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="insurance-type" style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">If yes, what is your insurance?</label>
+        <input type="text" id="insurance-type" name="insurance-type" style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; box-sizing: border-box;">
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">What can we help with?</label>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="anxiety" style="margin: 0; flex-shrink: 0;">
+            <span>Anxiety</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="depression" style="margin: 0; flex-shrink: 0;">
+            <span>Depression</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="grief" style="margin: 0; flex-shrink: 0;">
+            <span>Grief</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="adhd" style="margin: 0; flex-shrink: 0;">
+            <span>ADHD</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="trauma" style="margin: 0; flex-shrink: 0;">
+            <span>Trauma/PTSD</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="transitions" style="margin: 0; flex-shrink: 0;">
+            <span>Life Transitions</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="relationships" style="margin: 0; flex-shrink: 0;">
+            <span>Relationship Issues</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="work-stress" style="margin: 0; flex-shrink: 0;">
+            <span>Work Stress/Burnout</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="self-esteem" style="margin: 0; flex-shrink: 0;">
+            <span>Self Esteem</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="sleep" style="margin: 0; flex-shrink: 0;">
+            <span>Sleep Issues</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="substance" style="margin: 0; flex-shrink: 0;">
+            <span>Substance Use</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; cursor: pointer; padding: 4px;">
+            <input type="checkbox" name="concerns" value="other" style="margin: 0; flex-shrink: 0;">
+            <span>Other</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="message" style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">Message</label>
+        <textarea id="message" name="message" rows="3" style="width: 100%; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; box-sizing: border-box; resize: vertical; font-family: 'Aptos', 'Calibri', sans-serif; line-height: 1.4;"></textarea>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="hear-about" style="display: block; font-size: 14px; font-weight: 600; color: #3D3D3D; margin-bottom: 6px;">How did you hear about us?</label>
+        <select id="hear-about" name="hear-about" style="width: 100%; height: 48px; font-size: 16px; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px 16px; box-sizing: border-box; background: white;">
+          <option value="">Select one...</option>
+          <option value="google">Google Search</option>
+          <option value="insurance">Insurance Provider</option>
+          <option value="friend">Friend/Family</option>
+          <option value="social">Social Media</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <p style="font-size: 13px; color: #6B6B6B; margin: 0;">By completing this form you agree to receive email and SMS communications from us.</p>
+      </div>
+
+      <button type="submit" style="width: 100%; height: 48px; background: #1E4129; color: white; border: none; border-radius: 10px; font-size: 17px; font-weight: 600; font-family: 'Aptos', 'Calibri', sans-serif; cursor: pointer;">Submit</button>
+    </form>
+  </div>
+
+  <div style="text-align: center; color: #6B6B6B; font-size: 15px;">
+    <p style="margin-bottom: 4px; font-weight: 600;">📞 212-960-8626</p>
+    <p style="margin: 0;">303 Fifth Avenue Suite 1108, New York, NY 10016</p>
+  </div>
 </section>
 
 </main>

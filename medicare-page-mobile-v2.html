@@ -311,31 +311,27 @@ h2, h3, .section-header {
 
 /* Stat cards — horizontal scroll */
 .hero__stats {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 32px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
-.hero__stats::-webkit-scrollbar { display: none; }
-
 .stat-card {
-  min-width: 140px;
-  flex-shrink: 0;
   background: #2F5A3D;
   border-radius: 14px;
-  padding: 24px 20px;
+  padding: 20px 16px;
   color: #FFFFFF;
   text-align: center;
-  scroll-snap-align: start;
+}
+
+.stat-card:last-child {
+  grid-column: 1 / -1;
 }
 
 .stat-card__number {
   font-family: 'Aptos', 'Calibri', sans-serif;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1;
   margin-bottom: 6px;
@@ -372,10 +368,12 @@ h2, h3, .section-header {
 .hero__micro-copy {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 4px 14px;
   font-size: 13px;
   color: #6B6B6B;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .hero__micro-copy span {
